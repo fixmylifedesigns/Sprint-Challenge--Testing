@@ -14,5 +14,5 @@ async function insert(games) {
 }
 
 function getAll() {
-  return db(games);
+  return db("games");
 }
