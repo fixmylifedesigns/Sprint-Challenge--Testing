@@ -51,5 +51,10 @@ describe("server", () => {
   
         expect(res.body).toEqual({ message: `pacman has been added to our library` });
       });
+      it("should return error", () => {
+        const res = request(server).post("/games");
+  
+        expect(res.body).toEqual({ error: "please enter a title and genre for this game" });
+      });
   });
 });

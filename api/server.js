@@ -4,7 +4,12 @@ const Games = require("../games/gamesModel");
 
 const server = express();
 
-let games = [];
+let games = [
+
+
+
+
+];
 
 server.get("/", (req, res) => {
   res.json({ api: "up" });
@@ -20,11 +25,11 @@ server.post("/games", (req, res) => {
   if (!title || !genre) {
     return res
       .status(422)
-      .json({ error: "please enter a title and genre for this game" });
+      .json('games');
   }
   return res
     .status(201)
-    .json({ message: `${title} has been added to our library` });
+    .json(`${title} has been added to our library` );
 });
 // server.use(express.json());
 
